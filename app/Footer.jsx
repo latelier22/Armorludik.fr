@@ -127,7 +127,7 @@ const Footer = () => {
             </h5>
 
             <ul className="mb-0 list-none text-yellow-500">
-              <li>Armor ludiK - Repaire des p'tits loups</li>
+              <li>Armor ludiK - Repaire des p&apos;tits loups</li>
               <li>43, rue de Cornouaille</li>
               <li>22600 LOUDEAC</li>
               <li>0296251736</li>
