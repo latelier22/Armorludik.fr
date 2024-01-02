@@ -10,27 +10,31 @@ const Footer = () => {
     init();
   }, []);
 
-  // Définir les menus et les routes
-  const menuItems = [
+
+
+   // Définir les menus et les routes
+   const menuItems = [
     { label: "Accueil", route: "/" },
-    { label: "Entretien", route: "/entretien" },
-    { label: "Réparation", route: "/reparation" },
-    { label: "Fuite de toit", route: "/fuite" },
-    { label: "Travaux divers", route: "/travaux-divers" },
+    { label: "Activités", route: "/activites" },
+    { label: "Anniversaires", route: "/anniversaires" },
+    { label: "Boutique", route: "/boutique" },
+    { label: "Réservez", route: "/reservations" },
+    { label: "Tarifs", route: "/tarifs" },
+    { label: "Horaires", route: "/horaires" },
     { label: "Contact", route: "/contact" },
   ];
 
   // Définir un tableau d'objets pour les photos du footer
   const photoFooter = [
-    { url: "photo-toit1.png", alt: "gallery" },
-    { url: "photo-fuite1.png", alt: "gallery" },
-    { url: "photo-fuite2.png", alt: "gallery" },
-    { url: "photo-maconnerie1.png", alt: "gallery" },
-    { url: "photo-maconnerie2.png", alt: "gallery" },
+    // { url: "photo-toit1.png", alt: "gallery" },
+    // { url: "photo-fuite1.png", alt: "gallery" },
+    // { url: "photo-fuite2.png", alt: "gallery" },
+    // { url: "photo-maconnerie1.png", alt: "gallery" },
+    // { url: "photo-maconnerie2.png", alt: "gallery" },
   ];
 
   return (
-    <footer className="bg-black text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200">
+    <footer className="bg-orange-500 text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200">
       <div className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
         <div className="mr-12 hidden md:block">
           <span>Restons en contact sur les réseaux sociaux</span>
@@ -104,7 +108,7 @@ const Footer = () => {
       </div>
 
       <div className="mx-6 pt-8 pb-4 text-center">
-        <div className="mb-6 bg-black">
+        {/* <div className="mb-6 bg-black">
           <h5 className="mb-2 text-white font-bold uppercase">
             Une fuite ou une fissure dans votre toiture ?
           </h5>
@@ -114,7 +118,7 @@ const Footer = () => {
             Nous intervenons 7/7 J - 24/24h en cas d&apos;urgences ou fuites de
             votre toiture.
           </p>
-        </div>
+        </div> */}
 
         <div className="grid grid-cols-1 md:grid-cols-3 mb-4">
           <div className="mb-6">
@@ -123,18 +127,16 @@ const Footer = () => {
             </h5>
 
             <ul className="mb-0 list-none text-yellow-500">
-              <li>PRO COUVREUR ET NETTOYAGE</li>
-              <li>Dave MIQUEL</li>
-              <li>0780604044</li>
-              <li className=" text-white">N° de SIRET 88464374300013</li>
+              <li>Armor ludiK - Repaire des p'tits loups</li>
+              <li>43, rue de Cornouaille</li>
+              <li>22600 LOUDEAC</li>
+              <li>0296251736</li>
+              <li className=" text-white">N° de SIRET 91785987800014</li>
             </ul>
           </div>
 
           <div className="mb-6 flex-col flex items-center">
-            <h5 className="mb-2.5 font-bold text-yellow-500 dark:text-neutral-200">
-              DEVIS GRATUIT !
-            </h5>
-            <img src="photo-devis-gratuit.png" className="h-60  " alt="..." />
+            <img src="logo.png" className="h-60" alt="..." />
           </div>
 
           <div className="mb-6">
@@ -147,7 +149,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={menuItem.route}
-                    className=" text-orange-500 hover:text-yellow-500 dark:text-neutral-200"
+                    className=" text-white hover:text-sky-400 dark:text-neutral-200"
                   >
                     {menuItem.label}
                   </a>
