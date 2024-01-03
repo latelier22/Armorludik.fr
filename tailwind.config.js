@@ -27,8 +27,13 @@ module.exports = {
         slideRight: "slideRight 1s ease-in",
         slideLeft: "slideLeft 1s ease-in",
       },
+      fontFamily: {
+        sans: ["Rancho"],
+      },
     },
   },
+
+
   darkMode: "class",
   plugins: [require("tw-elements/dist/plugin.cjs")],
 };

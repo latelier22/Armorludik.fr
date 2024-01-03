@@ -3,46 +3,88 @@ import Navbar from "../NavBar";
 import Footer from "../Footer";
 import HeaderSimple from "../headerSimple";
 import RootLayout from "../layout";
+import Cards from "../Cards";
+import Title from "../Title";
+import Photos from "../Photos";
+import ListeActionsGauche from "../ListeActionsGauche";
 
 const Fuite = () => {
-  const pageTitle = "Fuite de toit";
+  const pageTitle = "Réception d'anniversaires !";
   const pageDescription =
-    "Votre toiture présente une fuite ou une fissure ? Il est impératif d&apos;agir rapidement pour éviter des dommages plus importants. Notre équipe est disponible 7 jours sur 7, 24 heures sur 24, pour intervenir en cas d&apos;urgence. Nous proposons des solutions rapides et efficaces, y compris la pose de bâche en urgence, la mise hors d&apos;eau prioritaire, et le remplacement des tuiles, ardoises, et toles défectueuses.";
+    "Découvrez toutes nos formules pour offrir à vos enfants une journée inoubliable !!!";
 
-  const actionsFuite = [
-    "Intervention rapide en cas de tempête ou de fuite de toiture",
-    "Pose urgente de bâche pour prévenir les infiltrations d&apos;eau",
-    "Mise hors d&apos;eau prioritaire pour minimiser les dégâts",
-    "Remplacement immédiat des tuiles, ardoises, et toles endommagées",
-    "Service disponible 7 jours sur 7, 24 heures sur 24",
+    const listeTitle = "ANNIVERSAIRE"
+    const listeSubTitle = "Le repaire des p’tits loups est heureux d’acceuillir votre enfant et ses ami(e)s pour fêté son anniversaire dans un endroit reserver rien que pour vous."
+    const photo = { url: "photo-anniversaire.jpg", alt: "de nombreuses activites pour les petits et les grands" }
+    const actions = [
+      "Le crénaux horaire pour l’anniversaire et de 14h à 17h ( l’emplacement doit être débarrassé à 17h). Dans toutes les formules le pack suivant pour 10 enfants (hôte compris): 9 cartons d’invitation, cadeau pour votre enfant. Un acompte de 30€ est demandé pour valider la réservation (paiment par CB ou éspaces). Plusieurs choix son disponibles :",
+      "Merci de nous prévenir à chaque enfant supplémentaire. Toutes boissons ou nourritures personnelles pour adultes sont interdites.",
+      
+    ];
+
+  // Déclarer les photos dans un tableau d'objets
+  const photos = [
+    { url: "table-nue.jpg", alt: "aire de jeu tobogant" },
+    {
+      url: "table-plus-bonbon-gateau.jpg",
+      alt: "table anniversaire avec bonbon et gateau",
+    },
+    { url: "table-faite.jpg", alt: "table anniversaire faite" },
   ];
+
+  const cards = [
+    {
+      title: "TABLE NUE",
+      text: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde",
+      button: "DETAILS...",
+      url: "table-nue.jpg",
+      alt: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde",
+    },
+    {
+      title: "TABLE DRESSEE",
+      text: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde",
+      button: "DETAILS...",
+      url: "table-faite.jpg",
+      alt: "table anniversaire faite",
+    },
+    {
+      title: "TABLE COMPLETE",
+      text: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde",
+      button: "DETAILS...",
+      url: "carte-jeux.jpg",
+      alt: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde",
+    },
+    {
+      title: "TABLE COMPLETE",
+      text: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde",
+      button: "DETAILS...",
+      url: "carte-jeux.jpg",
+      alt: "Cartes Magic, le deuxième jeu de carte le plus popolulaire au monde",
+    },
+  ];
+
+  const backgroundColor = "bg-fuchsia-700";
 
   return (
     <RootLayout pageTitle={pageTitle} pageDescription={pageDescription}>
       <Navbar />
+      <Title
+        myTitle={pageTitle}
+        mySubTitle={pageDescription}
+        backgroundColor={backgroundColor}
+      />
 
-      <HeaderSimple />
+<ListeActionsGauche actions={actions} listeTitle={listeTitle} listeSubTitle={listeSubTitle} photo={photo} gauche={false}/>
 
-      <section className="container mx-auto mt-8 p-4 bg-gray-100">
-        <h1 className="text-4xl font-bold mb-4">{pageTitle}</h1>
 
-        <p className="text-lg mb-4">
-          Votre toiture est exposée aux intempéries et peut subir des dommages au fil du temps. Une fuite ou une fissure peut causer des problèmes importants tels que des infiltrations d&apos;eau, des dégâts structurels, et même des problèmes d&apos;isolation. Il est crucial d&apos;agir rapidement pour minimiser les conséquences. Chez [Votre Entreprise], nous comprenons l&apos;urgence de la situation et nous sommes prêts à intervenir rapidement pour résoudre les problèmes liés à la fuite de toit.
-        </p>
+      <div className="bg-fuchsia-300">
+        <Cards cards={cards} buttonColor={backgroundColor} />
+      </div>
 
-        <p className="text-lg mb-4">
-          En cas de tempête ou de détection d&apos;une fuite, notre équipe est disponible 7 jours sur 7, 24 heures sur 24. Nous proposons une gamme de services visant à prévenir et à résoudre les problèmes liés aux fuites de toiture. Nos actions prioritaires incluent la pose immédiate de bâche pour prévenir les infiltrations d&apos;eau, la mise hors d&apos;eau rapide pour minimiser les dégâts potentiels, et le remplacement immédiat des éléments défectueux tels que les tuiles, les ardoises, et les toles.
-        </p>
+      <ListeActionsGauche actions={actions} listeTitle={listeTitle} listeSubTitle={listeSubTitle} photo={photo} gauche={true}/>
+<ListeActionsGauche actions={actions} listeTitle={listeTitle} listeSubTitle={listeSubTitle} photo={photo} gauche={false}/>
 
-        <h2 className="text-2xl font-bold mb-2">Actions en cas de fuite :</h2>
-        <ul className="list-disc ml-8">
-          {actionsFuite.map((action, index) => (
-            <li key={index}>{action}</li>
-          ))}
-        </ul>
-      </section>
-
-      <Footer />
+      <Footer backgroundColor={backgroundColor} />
     </RootLayout>
   );
 };

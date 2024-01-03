@@ -60,7 +60,7 @@ const HeaderSimple = () => {
                   <img
                     alt={photo.alt}
                     className="block h-full w-full rounded-lg object-cover object-center"
-                    src={photo.url}
+                    src={`images/${photo.url}`}
                   />
                 </div>
               </div>

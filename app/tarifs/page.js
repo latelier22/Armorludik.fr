@@ -1,78 +1,72 @@
 import React from "react";
 import Navbar from "../NavBar";
 import Footer from "../Footer";
-import HeaderSimple from "../headerSimple";
-import MyLightBox from "../MyLightBox";
 import RootLayout from "../layout";
+import Title from "../Title";
+import ListeActionsGauche from "../ListeActionsGauche";
 
-const Travaux = () => {
-  const images = [
-    { src: "photo-maconnerie1.png", alt: "Description 1" },
-    { src: "photo-maconnerie2.png", alt: "Description 2" },
-    { src: "photo-maconnerie3.png", alt: "Description 3" },
-  ];
-
-  const pageTitle = "Travaux divers";
+const Tarifs = () => {
+  const pageTitle = "Les tarifs";
   const pageDescription =
-    "Petits travaux de maçonnerie, mur en pierre, parpaings, brique, allée, pavés pierre, pavés autobloquant, petite dalle, terrasse";
+    "Les tarifs des entrées, des formules anniversaires, Quand vous venez au Repaire des p’tits loups n’oubliez pas les chaussettes pour vos enfants.";
+  ("");
 
-  const maconnerieParagraph = (
-    <p className="text-lg mb-4">
-      Nous sommes spécialisés dans une variété de petits travaux de maçonnerie qui peuvent transformer l&apos;aspect de votre espace extérieur. Que ce soit la construction de murs en pierre, en parpaings, ou en brique, nous avons l&apos;expertise pour réaliser des structures solides et esthétiquement agréables.
-    </p>
-  );
-
-  const facadeParagraph = (
-    <p className="text-lg mb-4">
-      Le ravalement de façade est un service essentiel pour maintenir l&apos;apparence et l&apos;intégrité de votre bâtiment. Nous offrons des solutions de ravalement de façade qui améliorent l&apos;esthétique tout en protégeant la structure contre les intempéries.
-    </p>
-  );
-
-  const alleesParagraph = (
-    <p className="text-lg mb-4">
-      Pour vos allées, nous proposons la réalisation d&apos;allées en béton, la pose de pavés en pierre naturelle ou de pavés autobloquants. Chaque option est conçue pour répondre à vos besoins esthétiques et fonctionnels.
-    </p>
-  );
-
-  const dallesParagraph = (
-    <p className="text-lg mb-4">
-      Les petits travaux de dalles en béton, que ce soit pour une terrasse ou une petite surface, font partie de nos compétences. Nous assurons une mise en place soignée et durable pour vos espaces extérieurs.
-    </p>
-  );
-
-  const actionsTravaux = [
-    "Construction de murs en pierre, parpaings, et brique",
-    "Ravalement de façade pour améliorer l&apos;esthétique",
-    "Réalisations d&apos;allées en béton, pavés en pierre, et pavés autobloquants",
-    "Petits travaux de dalles en béton pour terrasses et surfaces extérieures",
+  const listeTitle1 = "Les tarifs";
+  const listeSubTitle1 = "Entrée:";
+  const photo1 = {
+    url: "crocodile.jpg",
+    alt: "venez défier le crocodile sans vous dégonfler !!!",
+  };
+  const actions1 = [
+    "POUR LES 1 à 3 ans : 5,90€",
+    "POUR LES 3 à 14 ans : 7,90€",
+    "ACCOMPAGNANT + 18 ans : GRATUIT",
+    "SOIRÉE LUDIK : 20€"
   ];
+
+  const listeTitle2 = "Autres informations";
+  const listeSubTitle2 = "PETIT RAPPEL :";
+    const photo2 = {
+    url: "circuit-voiture.jpg",
+    alt: "venez défier les champions automobiles sans sortie de route!!!",
+  };
+  const actions2 = [
+    "Quand vous venez au Repaire des p’tits loups n’oubliez pas les chaussettes pour vos enfants.",
+  ];
+
+  const mySubTitleColor = "text-teal-200";
+  const backgroundColor = "bg-teal-500";
 
   return (
     <RootLayout pageTitle={pageTitle} pageDescription={pageDescription}>
       <Navbar />
-      <HeaderSimple />
-
-      <section className="container mx-auto mt-8 p-4 bg-gray-100">
-        <h1 className="text-4xl font-bold mb-4">{pageTitle}</h1>
-
-        {maconnerieParagraph}
-        {facadeParagraph}
-        {alleesParagraph}
-        {dallesParagraph}
-
-        <h2 className="text-2xl font-bold mb-2">Liste des Actions :</h2>
-        <ul className="list-disc ml-8">
-          {actionsTravaux.map((action, index) => (
-            <li key={index}>{action}</li>
-          ))}
-        </ul>
-      </section>
-
-      <MyLightBox images={images} />
-
-      <Footer />
+      <Title
+        myTitle={pageTitle}
+        mySubTitle={""}
+        backgroundColor={backgroundColor}
+      />
+<div className="bg-teal-200">
+        
+      
+      <ListeActionsGauche
+        actions={actions1}
+        listeTitle={listeTitle1}
+        listeSubTitle={listeSubTitle1}
+        photo={photo1}
+        gauche={false}
+      />
+      
+</div>
+<ListeActionsGauche
+        actions={actions2}
+        listeTitle={listeTitle2}
+        listeSubTitle={listeSubTitle2}
+        photo={photo2}
+        gauche={true}
+      />
+      <Footer backgroundColor={backgroundColor} />
     </RootLayout>
   );
 };
 
-export default Travaux;
+export default Tarifs;
